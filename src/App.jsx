@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './App.css'
+import Okienko from './okienko';
 
 const alfabet ="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
@@ -18,6 +19,14 @@ const alfabet ="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     return alfabet[pozycjaPoPrzesunieciu];
   }
 
+  function szyfrujCalosc() {
+
+  }
+
+  function nastepnaLitera() {
+    
+  }
+
 function App() {
     const [tekst, setTekst] = useState('HELLO');
     const [przesuniecie, setPrzesuniecie] = useState(3);
@@ -27,12 +36,17 @@ function App() {
 
   return (
     <>
-     <input type="text" value={tekst} onChange={ (e) => setTekst(e.target.value)} />
+     <input type="text" value={tekst} onChange={ (e) => setTekst(e.target.value)} /> <br />
      <input type="range" min={1} max={25} value={przesuniecie} onChange={ (e) =>setPrzesuniecie(parseInt(e.target.value)) } />
 
     <p>Tekst: {tekst}</p>
     <p>{zaszyfrowanyTekst}</p>
     <p>przesunięcie: {przesuniecie}</p>
+
+    <button onClick={nastepnaLitera}>Zaszyfruj natępna litere</button><br />
+    <button onClick={szyfrujCalosc}>Zaszyfruj całość</button>
+    
+
     </>
   )
 }
